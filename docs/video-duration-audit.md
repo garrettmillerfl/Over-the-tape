@@ -6,7 +6,7 @@ YouTube's watch page from this environment returned `playabilityStatus: LOGIN_RE
 
 These seconds are not a direct read of YouTube's own player, because that page was blocked. They are one public mirror of YouTube's published length. Nothing below is marked YouTube-page-verified.
 
-A later pass checked replacement titles for a different movement than the exercise. `33rJ7o9FSz4` ("Banded Squat Jumps | ARMR-UP Movements", 7 seconds) was a squat jump, so it was removed. The replacement was checked two ways: Invidious `lengthSeconds` on the video object, and the public storyboard image `https://i.ytimg.com/sb/oUKgQH7wJFQ/storyboard3_L2/M0.jpg`, whose frames show a band around the thighs and squats with both feet on the floor. The same storyboard check kept the volleyball approach clip. The trap-bar speed-pull storyboard sheet is only 48 pixels wide, so the bar path is not visible there; that link stays because its title is a dynamic-effort speed pull, not a high pull.
+A later pass removed `33rJ7o9FSz4` ("Banded Squat Jumps | ARMR-UP Movements") and briefly used `oUKgQH7wJFQ`, a feet-down squat. The linked clip is now the requested Short `EiN7xOEEY64`, titled "Banded Squat Jumps". The volleyball approach storyboard still shows an approach. The trap-bar speed-pull storyboard sheet is only 48 pixels wide, so the bar path is not visible there; that link stays because its title is a dynamic-effort speed pull, not a high pull.
 
 Unresolved exercises: none. Longest current link: Lateral Bounds, 29 seconds.
 
@@ -39,7 +39,7 @@ Unresolved exercises: none. Longest current link: Lateral Bounds, 29 seconds.
 | Countermovement Jumps | https://www.youtube.com/watch?v=Z3c4QscD1UY | 39 | https://www.youtube.com/watch?v=Lsh83hQtlqw | 20 | Countermovement Jump | Replaced |
 | Seated Box Jumps | https://www.youtube.com/watch?v=_74fQyvOV1s | 8 | same | 8 | Seated Box Jump | Kept |
 | Broad Jump to Vertical Jump | https://www.youtube.com/watch?v=DbqD_US36uY | 16 | same | 16 | Broad Jump to Vertical Jump | Kept |
-| Banded Speed Squats | https://www.youtube.com/watch?v=02bkJkp6W2s | 57 | https://www.youtube.com/watch?v=oUKgQH7wJFQ | 24 | Banded Speed Squat | Replaced. An earlier 7-second candidate, `33rJ7o9FSz4`, was titled "Banded Squat Jumps" and was not used. Current clip is feet-down squats with a thigh band, 24 seconds on Invidious, storyboard checked. |
+| Banded Squat Jumps (id `banded-speed-squats`) | https://www.youtube.com/watch?v=02bkJkp6W2s | 57 | https://www.youtube.com/watch?v=EiN7xOEEY64 | 14 | Banded Squat Jumps | Requested Short. Invidious `lengthSeconds` is 14. Title is "Banded Squat Jumps" by Generational Fitness. YouTube's watch page was still `LOGIN_REQUIRED` with no `lengthSeconds`. The public storyboard is only 48 pixels tall, so the jump itself is not readable there. `oUKgQH7wJFQ` (feet-down squat, 24 seconds) is no longer linked. |
 | Kettlebell Swings | https://www.youtube.com/watch?v=v3wnrSluDcw | 977 | https://www.youtube.com/watch?v=1cVT3ee9mgU | 26 | Kettlebell Swing | Replaced |
 | Barbell Back Squat | https://www.youtube.com/watch?v=8PMjqgR8Wa8 | 235 | https://www.youtube.com/watch?v=-bJIpOq-LWk | 12 | How to do a Barbell Back Squat | Replaced |
 | Trap Bar Deadlift | https://www.youtube.com/watch?v=eIFW8zspJzQ | 944 | https://www.youtube.com/watch?v=FYx76NSijfU | 16 | Trap Bar Deadlift | Replaced |
