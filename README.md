@@ -22,4 +22,4 @@ The NSCA youth resistance-training position statement is the background for supe
 
 Routine titles are Warm-Up, Lite, and Moderate, plus Advanced for the coach-supervised days. Exercise lists and ids are unchanged, so a saved plan still opens the same drills under the new name.
 
-Demo links are listed in `docs/video-duration-audit.md`. YouTube's own watch page was bot-blocked in this environment, so durations are the public Invidious `lengthSeconds` values, and only clips under 30 seconds are linked. The trap-bar speed pull is a speed pull, not a high pull. Banded speed squats stay on the floor; the refresher is not a squat jump. Cue text in the app still asks for a soft whole-foot landing.
+Demo links are listed in `docs/video-duration-audit.md`. YouTube's own watch page was bot-blocked in this environment, so durations are the public Invidious `lengthSeconds` values, and only clips under 30 seconds are linked. The trap-bar speed pull is a speed pull, not a high pull. Banded squat jumps use the Short at https://www.youtube.com/shorts/EiN7xOEEY64. Cue text in the app still asks for a soft whole-foot landing.
