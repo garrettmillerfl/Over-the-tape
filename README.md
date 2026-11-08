@@ -20,4 +20,6 @@ Jump volume stays short, with full rest, because youth plyometric guidance says 
 
 The NSCA youth resistance-training position statement is the background for supervised, progressive loading and for keeping Olympic-style lifts with a coach who can actually teach them: Faigenbaum et al., *Journal of Strength and Conditioning Research* 23, no. 5 Suppl (2009): S60–S79, https://www.nsca.com/globalassets/about/position-statements/position_stand_youth_resistance_training---2009.pdf/.
 
-YouTube links were checked with YouTube oEmbed (title and author returned, thumbnail available). The trap-bar speed-pull link is a trap-bar high pull, and the app says so. Cue text in the app overrides any video that teaches a stiff toe-only landing.
+Routine titles are Warm-Up, Lite, and Moderate, plus Advanced for the coach-supervised days. Exercise lists and ids are unchanged, so a saved plan still opens the same drills under the new name.
+
+Demo links are listed in `docs/video-duration-audit.md`. YouTube's own watch page was bot-blocked in this environment, so durations are the public Invidious `lengthSeconds` values, and only clips under 30 seconds are linked. The trap-bar speed pull is a speed pull, not a high pull. Banded speed squats stay on the floor; the refresher is not a squat jump. Cue text in the app still asks for a soft whole-foot landing.
