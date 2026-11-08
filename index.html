@@ -170,6 +170,7 @@ a { color: var(--pink-soft); }
 .group-hint { margin: 0 0 10px; color: var(--muted); font-size: .78rem; line-height: 1.4; }
 .badge-row { display: flex; gap: 4px; flex-wrap: wrap; justify-content: flex-end; align-items: flex-start; }
 .badge.new { background: rgba(255,255,255,.06); color: #d8d0e0; border: 1px solid var(--line); }
+.badge.lite { background: rgba(168,168,184,.16); color: #e4e4ee; }
 .ex-note { margin: 0; font-size: .75rem; color: #ffb3de; line-height: 1.35; }
 .level-row { margin-top: -6px; }
 .plan-card .ex-top { margin-bottom: 6px; }
@@ -333,7 +334,8 @@ a { color: var(--pink-soft); }
         <li>Land soft and quiet: hips and knees bend, and the whole foot settles. Stiff toe-only pops are only for tiny pogo hops.</li>
         <li>Quality over quantity. Hard sets stay short (about 3–6) with full rest. Stop while reps still look smooth.</li>
         <li>Jump 2–3 days a week, not back-to-back, and not the day before a match.</li>
-        <li>Start with the bodyweight routines. Barbells, Olympic lifts, depth jumps, and hurdle jumps live in the coach-only section.</li>
+        <li>Warm-Up #1 and #2 are lighter sessions. They do not replace the warm-up above before a Lite, Moderate, or Advanced day.</li>
+        <li>Barbells, Olympic lifts, depth jumps, and hurdle jumps are in Advanced. A qualified coach stays with you for those.</li>
         <li>Use a low, stable box or step. Do not stack furniture. Do not max out a lift.</li>
         <li>Stop for sharp pain (that is different from muscle effort) and tell a parent or coach. Nothing here promises fewer injuries or extra inches.</li>
       </ul>
@@ -352,10 +354,10 @@ a { color: var(--pink-soft); }
       <button class="chip" data-cat="Core">Core</button>
     </div>
     <div class="chip-row level-row" id="levelFilters">
-      <button class="chip active" data-level="all">All levels</button>
-      <button class="chip" data-level="starter">Starter</button>
-      <button class="chip" data-level="building">Building</button>
-      <button class="chip" data-level="advanced">Coach only</button>
+      <button class="chip active" data-level="all">All</button>
+      <button class="chip" data-level="warmup">Warm-Up</button>
+      <button class="chip" data-level="moderate">Moderate</button>
+      <button class="chip" data-level="advanced">Advanced</button>
     </div>
     <div id="exerciseList"></div>
   </section>
@@ -422,7 +424,7 @@ a { color: var(--pink-soft); }
     </div>
     <div class="card settings-card" style="margin-top:12px">
       <h3 style="margin:0 0 6px; color:#fff">About</h3>
-      <p class="muted" style="margin:0; font-size:.85rem">Over The Tape — a volleyball jump tracker for aspiring players. Starter routines are bodyweight and lower-impact. Heavier lifts and reactive jumps sit in a separate coach-only section. Logs stay on this device.</p>
+      <p class="muted" style="margin:0; font-size:.85rem">Over The Tape — a volleyball jump tracker for aspiring players. Warm-Up and Lite sessions are bodyweight and lower-impact. Advanced lifts and reactive jumps need a coach. Logs stay on this device.</p>
     </div>
   </section>
 </main>
@@ -471,7 +473,7 @@ const EXERCISES = [
     difficulty: "Intermediate",
     setsReps: "3 × 6",
     cues: ["Use a low, sturdy box (start small!)", "Swing arms, jump up, land soft on top", "Step down — don't jump down"],
-    youtubeId: "h1YkVa7mnRU"
+    youtubeId: "W5QzqIbEWvk"
   },
   {
     id: "pogo-hops",
@@ -480,7 +482,7 @@ const EXERCISES = [
     difficulty: "Beginner",
     setsReps: "3 × 20 sec",
     cues: ["Tiny quick hops on the balls of your feet", "This drill is springy on purpose. Bigger jumps land on the whole foot", "Keep the hops small and quiet"],
-    youtubeId: "c2LBofIzUqs"
+    youtubeId: "EjwLFHvrHss"
   },
   {
     id: "tuck-jumps",
@@ -507,7 +509,7 @@ const EXERCISES = [
     difficulty: "Intermediate",
     setsReps: "3 × 10/side",
     cues: ["Leap side to side like a speed skater", "Trail leg can tap for balance", "Keep chest up and hips level"],
-    youtubeId: "5gtLC5BgN7Q"
+    youtubeId: "IIfU9N1zFQc"
   },
   {
     id: "single-leg-hops",
@@ -516,7 +518,7 @@ const EXERCISES = [
     difficulty: "Intermediate",
     setsReps: "2 × 6/leg",
     cues: ["Hop forward on one leg, stick the landing", "Knee tracks over toes — no cave-in", "Hold 1 sec before the next hop"],
-    youtubeId: "WlR8BX6aZZY"
+    youtubeId: "rFMpFXz_3cE"
   },
   {
     id: "split-squat-jumps",
@@ -525,7 +527,7 @@ const EXERCISES = [
     difficulty: "Advanced",
     setsReps: "3 × 6/side",
     cues: ["Start in a split stance (lunge)", "Jump and switch legs in the air", "Land soft — or step-switch if learning"],
-    youtubeId: "kneZ1IWUQUY"
+    youtubeId: "WfPJ8jaw4Fc"
   },
   {
     id: "broad-jumps",
@@ -534,7 +536,7 @@ const EXERCISES = [
     difficulty: "Intermediate",
     setsReps: "3 × 5",
     cues: ["Load hips back, arms swing behind", "Explode forward and up ~45°", "Stick the landing with soft knees"],
-    youtubeId: "7Du1KbwCdUk"
+    youtubeId: "sHHZ296kBHE"
   },
   {
     id: "calf-raises",
@@ -543,7 +545,7 @@ const EXERCISES = [
     difficulty: "Beginner",
     setsReps: "3 × 15",
     cues: ["Rise high onto the balls of your feet", "Pause 1 sec at the top", "Lower slowly — control the down"],
-    youtubeId: "gwLzBJYoWlI"
+    youtubeId: "Km0QS46bTEA"
   },
   {
     id: "glute-bridges",
@@ -561,7 +563,7 @@ const EXERCISES = [
     difficulty: "Beginner",
     setsReps: "3 × 30–45 sec",
     cues: ["Back flat on the wall", "Thighs parallel if you can", "Knees over ankles, breathe steady"],
-    youtubeId: "i5mzUfWL96Q"
+    youtubeId: "RG7z0P9qrLk"
   },
   {
     id: "bulgarian-split-squats",
@@ -570,7 +572,7 @@ const EXERCISES = [
     difficulty: "Intermediate",
     setsReps: "3 × 8/leg",
     cues: ["Back foot on a low bench/step", "Most weight on the front leg", "Lower with control, drive through front heel"],
-    youtubeId: "2C-uNgKwPLE"
+    youtubeId: "92Nxf5BTnrs"
   },
   {
     id: "step-ups",
@@ -579,7 +581,7 @@ const EXERCISES = [
     difficulty: "Beginner",
     setsReps: "3 × 10/leg",
     cues: ["Whole foot on a sturdy step", "Push through the front leg — don't push off the back", "Stand tall at the top"],
-    youtubeId: "dQqApCGd5Ss"
+    youtubeId: "M1SQgm5qA78"
   },
   {
     id: "reverse-lunges",
@@ -597,7 +599,7 @@ const EXERCISES = [
     difficulty: "Beginner",
     setsReps: "3 × 6",
     cues: ["Small jump, or step off a low stable surface", "Land quiet: hips back, knees bend, whole foot settles", "Hold the stick for 2 seconds"],
-    youtubeId: "AzZLYpEc93E"
+    youtubeId: "FDEjKyiY9h8"
   },
   {
     id: "approach-jumps",
@@ -606,7 +608,7 @@ const EXERCISES = [
     difficulty: "Intermediate",
     setsReps: "4 × 4",
     cues: ["Practice your 3-step or 4-step approach", "Plant strong, swing arms up hard", "Reach high — then land soft"],
-    youtubeId: "B7vbjJ2wQQQ"
+    youtubeId: "CSIhUzuAVAM"
   },
   {
     id: "forearm-plank",
@@ -626,7 +628,7 @@ const EXERCISES = [
     added: true,
     setsReps: "3 × 20 sec",
     cues: ["Easy bounce, one small hop per turn", "Wrists turn the rope. Elbows stay quiet", "Rest between sets. This is practice, not a sprint"],
-    youtubeId: "3dwMzERxpRw"
+    youtubeId: "Zjq9NJDphTM"
   },
   {
     id: "spring-ankle-holds",
@@ -637,7 +639,7 @@ const EXERCISES = [
     added: true,
     setsReps: "3 × 15–20 sec",
     cues: ["Rise onto the balls of both feet and hold still", "Knees soft, not locked. Whole forefoot presses down", "Come down under control. No bouncing"],
-    youtubeId: "arLsa_isSOw"
+    youtubeId: "hT4KHG0e19A"
   },
   {
     id: "bent-knee-calf-raises",
@@ -649,7 +651,7 @@ const EXERCISES = [
     setsReps: "3 × 12",
     note: "Different from standing Calf Raises. The bent knee shifts work toward the soleus.",
     cues: ["Sit tall, knees bent about 90 degrees", "Lift heels slowly, pause, lower slowly", "Bodyweight is enough. Add a light book later only if the lift stays smooth"],
-    youtubeId: "8Vc4cx7nF4Y"
+    youtubeId: "-KZ0TJydf8M"
   },
   {
     id: "goblet-squat",
@@ -662,7 +664,7 @@ const EXERCISES = [
     setsReps: "3 × 8",
     note: "A teaching squat with a light load. Leave several reps in the tank. Not a max lift.",
     cues: ["Hold the weight at your chest, elbows down", "Sit between your hips and keep heels down", "Stand tall. Stop if your back rounds"],
-    youtubeId: "JO7D6GJ98wY"
+    youtubeId: "zBV3ceGyAxw"
   },
   {
     id: "single-leg-stick-landings",
@@ -698,7 +700,7 @@ const EXERCISES = [
     setsReps: "3 × 5",
     note: "A measured target jump, separate from Squat Jumps. Full rest. Do not grind extra reps.",
     cues: ["Fast dip, then jump tall and reach", "Land soft: hips and knees bend, whole foot settles", "Reset and rest. Log height on Progress if you measured one"],
-    youtubeId: "Z3c4QscD1UY"
+    youtubeId: "Lsh83hQtlqw"
   },
   {
     id: "seated-box-jumps",
@@ -708,7 +710,7 @@ const EXERCISES = [
     equipment: "Low sturdy box",
     added: true,
     setsReps: "3 × 4",
-    note: "Low box only. Step down. Not a starter routine and not the day before a match.",
+    note: "Low box only. Step down. Not a Warm-Up or Lite routine and not the day before a match.",
     cues: ["Sit on a bench, feet flat, no rocking start", "Stand and jump onto a low box you can land quietly on", "Step down. Rest fully. Never stack furniture"],
     youtubeId: "_74fQyvOV1s"
   },
@@ -734,7 +736,7 @@ const EXERCISES = [
     setsReps: "3 × 5",
     note: "Light band only. Speed with a quiet landing, not a max jump contest.",
     cues: ["Stand on the band and hold the ends at your shoulders", "Sit into a squat, then stand and leave the floor just a little", "Land soft on the whole foot. Rest about 1–2 minutes"],
-    youtubeId: "02bkJkp6W2s"
+    youtubeId: "33rJ7o9FSz4"
   },
   {
     id: "kettlebell-swings",
@@ -746,7 +748,7 @@ const EXERCISES = [
     setsReps: "3 × 8",
     note: "Learn the hinge with a coach or a parent who knows it. Stop if your lower back rounds.",
     cues: ["Hinge the hips. The bell floats to about chest height", "Arms stay long. Snap the hips tall. Do not squat the bell", "Park the bell with control. Light weight only"],
-    youtubeId: "v3wnrSluDcw"
+    youtubeId: "1cVT3ee9mgU"
   },
   {
     id: "barbell-back-squat",
@@ -757,8 +759,8 @@ const EXERCISES = [
     added: true,
     setsReps: "3 × 5",
     note: "Qualified coach in the room. Light enough that every rep looks the same. No 1-rep max.",
-    cues: ["Bar on the upper back, feet about shoulder width", "Sit down and stand up with a braced torso and heels down", "Rack the bar safely. Rest fully. Not a starter plan"],
-    youtubeId: "8PMjqgR8Wa8"
+    cues: ["Bar on the upper back, feet about shoulder width", "Sit down and stand up with a braced torso and heels down", "Rack the bar safely. Rest fully. Not a Warm-Up or Lite plan"],
+    youtubeId: "-bJIpOq-LWk"
   },
   {
     id: "trap-bar-deadlift",
@@ -770,7 +772,7 @@ const EXERCISES = [
     setsReps: "3 × 5",
     note: "A trap bar is not automatically safe. Coach in the room. Modest load, flat back.",
     cues: ["Stand inside the frame, hands at your sides", "Push the floor away and stand tall without leaning back", "Lower the bar with control. Stop if the back rounds"],
-    youtubeId: "eIFW8zspJzQ"
+    youtubeId: "FYx76NSijfU"
   },
   {
     id: "barbell-rdl",
@@ -794,7 +796,7 @@ const EXERCISES = [
     setsReps: "3 × 8",
     note: "Upper back on a stable bench. Light bar and a pad. Coach should check the setup.",
     cues: ["Feet flat, knees bent, ribs down", "Squeeze glutes to lift until hips are tall", "Do not over-arch the lower back. Lower with control"],
-    youtubeId: "Zp26q4BY5HE"
+    youtubeId: "5S8SApGU_Lk"
   },
   {
     id: "single-leg-leg-press",
@@ -816,9 +818,9 @@ const EXERCISES = [
     equipment: "Barbell or PVC",
     added: true,
     setsReps: "3 × 3",
-    note: "Olympic lift. Start with a PVC pipe or empty bar and a coach who teaches the catch. Not a starter plan.",
+    note: "Olympic lift. Start with a PVC pipe or empty bar and a coach who teaches the catch. Not a Warm-Up or Lite plan.",
     cues: ["Start from the hang, bar above the knees", "Jump the bar up and catch it on the front of the shoulders in a small dip", "Stand tall to finish. Rest fully. Stop when the catch gets loose"],
-    youtubeId: "efHjodEVf9w"
+    youtubeId: "5xVcZOPywNI"
   },
   {
     id: "trap-bar-speed-pulls",
@@ -828,9 +830,9 @@ const EXERCISES = [
     equipment: "Trap bar",
     added: true,
     setsReps: "3 × 3",
-    note: "The refresher video is a trap-bar high pull, the fast hip-snap cousin of this drill. Coach only. Light and fast, not a max.",
-    cues: ["Same setup as a trap-bar deadlift with a light load", "Stand up fast and shrug tall. Feet can leave the floor a little", "Land or return the bar with control. Rest fully"],
-    youtubeId: "6UsMx5BoSK0"
+    note: "A fast, light trap-bar pull, not a high pull and not a max. A trap bar is not risk-free. A coach stays with you.",
+    cues: ["Same setup as a light trap-bar deadlift", "Stand up fast. The bar stays in your hands. Do not pull it to your chin", "Return the bar with control. Rest fully"],
+    youtubeId: "hHniEao5Ul0"
   },
   {
     id: "dumbbell-squat-jumps",
@@ -840,9 +842,9 @@ const EXERCISES = [
     equipment: "Light dumbbells",
     added: true,
     setsReps: "3 × 4",
-    note: "Loaded jump. Very light dumbbells and a coach. Not for a starter day or the day before a match.",
+    note: "Loaded jump. Very light dumbbells and a coach. Not for a Warm-Up or Lite day or the day before a match.",
     cues: ["Hold light dumbbells at your sides", "Dip and jump, then land soft with the whole foot", "Rest fully. Stop if the landing gets loud"],
-    youtubeId: "XOTO2qWRy9U"
+    youtubeId: "wVpp2XH1ELI"
   },
   {
     id: "depth-jumps",
@@ -854,7 +856,7 @@ const EXERCISES = [
     setsReps: "3 × 4",
     note: "Reactive drill for athletes who already stick landings, with a qualified coach. Some videos cue a stiff toe landing. Here, bend the hips and knees and let the whole foot settle.",
     cues: ["Step off a low box. Do not jump up off it", "Land soft, then leave the floor only if the landing was quiet", "Step back up. Few contacts, long rest, stable box only"],
-    youtubeId: "fL66hVKR89Q"
+    youtubeId: "bMHL5xqKn3E"
   },
   {
     id: "alternating-box-jumps",
@@ -864,7 +866,7 @@ const EXERCISES = [
     equipment: "Low sturdy boxes",
     added: true,
     setsReps: "3 × 4",
-    note: "Repeated jumps on and between low boxes. Coach only. Step down if the landing stops looking easy.",
+    note: "Repeated jumps on and between low boxes. A coach stays with you. Step down if the landing stops looking easy.",
     cues: ["Two-foot jump onto a low box, then continue to the next low target", "Land quiet with hips and knees bending", "Rest fully. Do not use furniture"],
     youtubeId: "MNSIKQ7jFsE"
   },
@@ -888,9 +890,9 @@ const EXERCISES = [
     equipment: "Bodyweight",
     added: true,
     setsReps: "3 × 4",
-    note: "A turn in the air makes the landing harder. Coach only, and only after two-foot sticks are quiet.",
+    note: "A turn in the air makes the landing harder. A coach stays with you, and only after two-foot sticks are quiet.",
     cues: ["Jump, turn halfway, and land facing the new direction", "Soft whole-foot stick with hips and knees bending", "Reset. Rest fully. Skip the turn if you cannot stick it"],
-    youtubeId: "xTjBP85moMo"
+    youtubeId: "6J-h1N8Sq_w"
   },
   {
     id: "back-leg-elevated-jumps",
@@ -900,7 +902,7 @@ const EXERCISES = [
     equipment: "Low sturdy bench",
     added: true,
     setsReps: "3 × 3/leg",
-    note: "A jump from a Bulgarian split stance. Own the strength version first. Coach only. Low bench.",
+    note: "A jump from a Bulgarian split stance. Own the strength version first. A coach stays with you. Low bench.",
     cues: ["Back foot rests on a low bench, most of the work on the front leg", "Dip and jump a little, then land on that same front foot", "Soft knee and hip. Step down to rest. Switch legs"],
     youtubeId: "ehiRILvixIE"
   },
@@ -909,78 +911,78 @@ const EXERCISES = [
 const PLANS = [
   {
     id: "starter-quiet-feet",
-    name: "Starter — Quiet Feet",
-    group: "start",
+    name: "Warm-Up #1 - Quiet Feet",
+    group: "warmup",
     blurb: "Lower-impact landing and strength. A good default before harder jumps.",
     exerciseIds: ["stick-landings", "spring-ankle-holds", "bent-knee-calf-raises", "reverse-lunges", "glute-bridges", "forearm-plank"]
   },
   {
     id: "starter-short-hops",
-    name: "Starter — Short Hops",
-    group: "start",
+    name: "Warm-Up #2 - Short Hops",
+    group: "warmup",
     blurb: "A little bounce, then strength. Short sets. Not a match-eve workout.",
     exerciseIds: ["jump-rope", "stick-landings", "step-ups", "calf-raises", "wall-sits"]
   },
   {
     id: "day-b",
-    name: "Day B — Strong Legs",
-    group: "start",
+    name: "Lite Workout #1 - Strong Legs",
+    group: "lite",
     blurb: "Bodyweight strength for the legs that jump. Rest a day before you jump hard again.",
     exerciseIds: ["wall-sits", "bulgarian-split-squats", "step-ups", "reverse-lunges", "calf-raises", "glute-bridges"]
   },
   {
     id: "day-a",
-    name: "Day A — Power Pop",
-    group: "original",
+    name: "Lite Workout #2 - Power Pop",
+    group: "lite",
     blurb: "Original jump mix plus landing practice. 2–3 times a week with rest between, not the day before a match.",
     exerciseIds: ["pogo-hops", "squat-jumps", "box-jumps", "stick-landings", "glute-bridges", "forearm-plank"]
   },
   {
     id: "day-c",
-    name: "Day C — Court Ready",
-    group: "original",
+    name: "Lite Workout #3 - Court Ready",
+    group: "lite",
     blurb: "Original approach and lateral day. Keep landings quiet and skip it before a match.",
     exerciseIds: ["pogo-hops", "lateral-bounds", "skater-jumps", "approach-jumps", "broad-jumps", "forearm-plank"]
   },
   {
     id: "next-light-weights",
-    name: "Next — Light Weights",
-    group: "next",
+    name: "Moderate Workout #1 - The Beginning",
+    group: "moderate",
     blurb: "A dumbbell or backpack plus bodyweight legs. Smooth reps. No max tests.",
     exerciseIds: ["goblet-squat", "bulgarian-split-squats", "glute-bridges", "bent-knee-calf-raises", "forearm-plank"]
   },
   {
     id: "next-single-leg",
-    name: "Next — One Foot at a Time",
-    group: "next",
+    name: "Moderate Workout #2 - One Foot at a Time",
+    group: "moderate",
     blurb: "After two-foot landings are quiet. Short sets and a full rest.",
     exerciseIds: ["single-leg-stick-landings", "single-leg-pogo-hops", "step-ups", "bulgarian-split-squats"]
   },
   {
     id: "next-band-pop",
-    name: "Next — Light Band Pop",
-    group: "next",
+    name: "Moderate Workout #3 - Light Band Pop",
+    group: "moderate",
     blurb: "One speed drill with a light band, then easy calf work. Not a full jump circuit.",
     exerciseIds: ["banded-speed-squats", "stick-landings", "calf-raises"]
   },
   {
     id: "next-hinge",
-    name: "Next — Hip Hinge",
-    group: "next",
+    name: "Moderate Workout #4 - Hip Hinge",
+    group: "moderate",
     blurb: "Light kettlebell swings plus a goblet squat. Learn the hinge with someone who knows it.",
     exerciseIds: ["kettlebell-swings", "goblet-squat", "glute-bridges"]
   },
   {
     id: "next-measure",
-    name: "Next — Measure Day",
-    group: "next",
+    name: "Moderate Workout #5 - Measure Day",
+    group: "moderate",
     blurb: "A few careful countermovement jumps, then landing practice. Rest fully. Log one height if you measured it.",
     exerciseIds: ["countermovement-jumps", "stick-landings", "spring-ankle-holds"]
   },
   {
     id: "next-low-box",
-    name: "Next — Low Box Power",
-    group: "next",
+    name: "Moderate Workout #6 - Low Box Power",
+    group: "moderate",
     blurb: "Two power drills on a low stable box or the floor. Step down. Not the day before a match.",
     exerciseIds: ["seated-box-jumps", "broad-to-vertical", "stick-landings"]
   },
@@ -988,7 +990,7 @@ const PLANS = [
     id: "adv-gym-squat",
     name: "Advanced — Squat and Hinge",
     group: "advanced",
-    blurb: "Three light barbell lifts. A qualified coach stays with you. No 1-rep max. Not a starter plan.",
+    blurb: "Three light barbell lifts. A qualified coach stays with you. No 1-rep max. Not a Warm-Up or Lite plan.",
     exerciseIds: ["barbell-back-squat", "barbell-rdl", "barbell-hip-thrust"]
   },
   {
@@ -1023,7 +1025,7 @@ const PLANS = [
     id: "adv-hurdles",
     name: "Advanced — Hurdles",
     group: "advanced",
-    blurb: "Single-leg hurdle jumps and back-leg elevated jumps. Very low obstacles. Coach only.",
+    blurb: "Single-leg hurdle jumps and back-leg elevated jumps. Very low obstacles. A coach stays with you.",
     exerciseIds: ["single-leg-hurdle-jumps", "back-leg-elevated-jumps", "stick-landings"]
   },
   {
@@ -1074,10 +1076,10 @@ let activeCategory = "all";
 let activeLevel = "all";
 
 const PLAN_GROUPS = [
-  ["start", "Start here", "Bodyweight and lower-impact. These are the default routines."],
-  ["original", "Original jump days", "The first plans, same exercises as before. Moderate effort, full rest, not the day before a match."],
-  ["next", "Optional next step", "Light equipment or harder bodyweight work after quiet landings feel easy."],
-  ["advanced", "Coach-supervised advanced", "Heavy barbells, Olympic lifts, depth jumps, and hurdle jumps. Open this on purpose. It is not the teen starter plan."]
+  ["warmup", "Warm-Up", "Lighter sessions. They do not replace the 5–8 minute warm-up before a Lite, Moderate, or Advanced day."],
+  ["lite", "Lite workouts", "The original three sessions, same exercises as before. Warm up first. Full rest between hard sets, and not the day before a match."],
+  ["moderate", "Moderate", "Light equipment or harder bodyweight work after quiet landings feel easy. Warm up before you start."],
+  ["advanced", "Advanced", "Heavy barbells, Olympic lifts, depth jumps, and hurdle jumps. A qualified coach stays with you. This is not a warm-up."]
 ];
 const COACH_NOTE = "Coach-supervised advanced drill. Not part of the starter routines. Keep every rep smooth and skip max tests.";
 
@@ -1111,11 +1113,18 @@ function exerciseView(id) {
   };
 }
 function levelOf(e) {
-  if (!e) return "starter";
-  if (e.tier) return e.tier;
-  if (e.difficulty === "Beginner") return "starter";
+  if (!e) return "warmup";
+  if (e.tier === "building" || e.tier === "moderate") return "moderate";
   if (e.difficulty === "Advanced") return "advanced";
-  return "building";
+  if (e.difficulty === "Intermediate") return "moderate";
+  if (e.difficulty === "Beginner") return "warmup";
+  return "moderate";
+}
+function levelLabel(level) {
+  return { warmup: "Warm-Up", moderate: "Moderate", advanced: "Advanced" }[level] || "Moderate";
+}
+function levelClass(level) {
+  return { warmup: "beginner", moderate: "intermediate", advanced: "advanced" }[level] || "intermediate";
 }
 function equipmentOf(e) {
   return (e && e.equipment) || "Bodyweight";
@@ -1204,10 +1213,10 @@ function updateHeader() {
 }
 
 function planTag(group) {
-  if (group === "advanced") return `<span class="badge advanced">Coach only</span>`;
-  if (group === "start") return `<span class="badge beginner">Starter</span>`;
-  if (group === "next") return `<span class="badge intermediate">Optional</span>`;
-  return `<span class="badge intermediate">Original</span>`;
+  if (group === "advanced") return `<span class="badge advanced">Advanced</span>`;
+  if (group === "warmup") return `<span class="badge beginner">Warm-Up</span>`;
+  if (group === "lite") return `<span class="badge lite">Lite</span>`;
+  return `<span class="badge intermediate">Moderate</span>`;
 }
 function renderPlans() {
   const el = document.getElementById("plansList");
@@ -1245,7 +1254,7 @@ function renderExercises() {
     return catOk && lvlOk;
   });
   if (!filtered.length) {
-    list.innerHTML = `<div class="empty">Nothing in this filter. Try All levels or another category.</div>`;
+    list.innerHTML = `<div class="empty">Nothing in this filter. Try All or another category.</div>`;
     return;
   }
   list.innerHTML = filtered.map(e => {
@@ -1262,7 +1271,7 @@ function renderExercises() {
           <h3 class="ex-name">${e.name}</h3>
           <div class="badge-row">
             ${e.added ? `<span class="badge new">New</span>` : ""}
-            <span class="badge ${e.difficulty.toLowerCase()}">${e.difficulty}</span>
+            <span class="badge ${levelClass(levelOf(e))}">${levelLabel(levelOf(e))}</span>
           </div>
         </div>
         <div class="ex-meta">${e.category} · ${equipmentOf(e)} · ${e.setsReps}</div>
@@ -1286,7 +1295,7 @@ function openDetail(id) {
     <div class="modal-header">
       <div>
         <h3>${e.name}</h3>
-        <div class="ex-meta">${e.category} · ${e.difficulty} · ${equipmentOf(e)} · ${e.setsReps}</div>
+        <div class="ex-meta">${e.category} · ${levelLabel(levelOf(e))} · ${equipmentOf(e)} · ${e.setsReps}</div>
       </div>
       <button class="icon-btn" id="closeModal" aria-label="Close" style="background:rgba(255,47,160,.15);color:#fff;border-color:rgba(255,47,160,.35)">✕</button>
     </div>
@@ -1319,7 +1328,7 @@ function loadPlan(planId) {
   const plan = PLANS.find(p => p.id === planId);
   if (!plan) return;
   if (plan.group === "advanced") {
-    const ok = confirm("This is a coach-supervised advanced plan: heavy lifting, Olympic lifts, or high-impact jumps. It is not the starter routine. Use a qualified coach, keep loads light enough that every rep looks smooth, and skip it the day before a match. Load it anyway?");
+    const ok = confirm("This is a coach-supervised advanced plan: heavy lifting, Olympic lifts, or high-impact jumps. It is not a Warm-Up or Lite session. Use a qualified coach, keep loads light enough that every rep looks smooth, and skip it the day before a match. Load it anyway?");
     if (!ok) return;
   }
   ensureChecklistDate();
@@ -1351,7 +1360,7 @@ function renderToday() {
     const e = exerciseView(id);
     const entry = day[id] || { sets: "", reps: "", done: false };
     if (entry.done) doneCount += 1;
-    const flag = levelOf(e) === "advanced" ? `<div class="ex-note">Coach only</div>` : "";
+    const flag = levelOf(e) === "advanced" ? `<div class="ex-note">Advanced · coach with you</div>` : "";
     return `
       <div class="check-item ${entry.done ? "check-done" : ""}" data-check="${id}">
         <div class="check-info">
