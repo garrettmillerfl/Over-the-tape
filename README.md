@@ -4,6 +4,20 @@ Volleyball vertical-jump workout tracker for an aspiring player.
 
 https://garrettmillerfl.github.io/Over-the-tape/
 
+## Brand
+
+The app uses the black rounded-tile mark: a light-blue volleyball, a white jumper, and a light-blue arrow. The wordmark is OVER THE in white and TAPE in light blue. The tagline is Volleyball Jump Tracker.
+
+| Role | Hex |
+|---|---|
+| Page background | `#0B0D10` |
+| Card | `#14181C` |
+| Primary accent and glow | `#74BCE2` |
+| Navy | `#1B3A6B` |
+| Text | `#FFFFFF` |
+
+`assets/logo.png` is the header and splash logo. `assets/icon-180.png`, `assets/icon-192.png`, `assets/icon-512.png`, and `assets/favicon.png` are the same tile on solid black. `assets/icon-maskable-512.png` keeps that tile inside the maskable safe area. `assets/logo-original.jpg` is the source artwork.
+
 ## What is in the app
 
 The page is one self-contained file. Workouts, Today, Progress, and Settings stay in the browser under `localStorage` key `jumpHigher.v1`. Existing exercise IDs are unchanged, so older logs, checklists, and jump history still resolve after this update. Import and export still use that same saved object.
