@@ -22,4 +22,26 @@ The NSCA youth resistance-training position statement is the background for supe
 
 Routine titles are Warm-Up, Lite, and Moderate, plus Advanced for the coach-supervised days. Exercise lists and ids are unchanged, so a saved plan still opens the same drills under the new name.
 
+## Analytics
+
+The page loads Google Analytics 4 (`G-0X84W0N73J`) with Google signals and ad personalization turned off. Automatic page views are off. Each in-app screen sends `page_view` and `screen_view` with the screen name Workouts, Today, Progress, or Settings.
+
+`track()` drops anything that is not a short string on an allowed key, and it does nothing if `gtag` is missing. Events never include the athlete name, notes, set or rep counts, jump inches, or the `jumpHigher.v1` save.
+
+| Event | When it fires | Parameters |
+|---|---|---|
+| `page_view` | A tab opens, including the first Workouts view | `page_title`, `page_location`, `screen_name` |
+| `screen_view` | Same screen change | `screen_name`, `app_name` |
+| `workout_start` | A routine is loaded onto Today | `level` (Warm-Up, Lite, Moderate, or Advanced), `workout_name` |
+| `workout_complete` | Every exercise on the loaded routine is marked done | `level`, `workout_name` |
+| `exercise_video_open` | The refresher sheet opens, and again if the YouTube link is clicked | `exercise_name` |
+| `level_select` | Warm-Up, Moderate, or Advanced filter is chosen | `level` |
+| `advanced_gate_confirm` | The coach confirmation is accepted | none |
+| `progress_log` | An exercise is marked done, or a jump measurement is saved | none |
+| `data_export` | A backup file is downloaded | none |
+| `data_import` | A backup file imports successfully | none |
+| `pwa_install` | The browser reports the page was installed | none |
+
+There is no install button in the app. `pwa_install` only runs if the browser fires `appinstalled`.
+
 Demo links are listed in `docs/video-duration-audit.md`. YouTube's own watch page was bot-blocked in this environment, so durations are the public Invidious `lengthSeconds` values, and only clips under 30 seconds are linked. The trap-bar speed pull is a speed pull, not a high pull. Banded squat jumps use the Short at https://www.youtube.com/shorts/EiN7xOEEY64. Cue text in the app still asks for a soft whole-foot landing.
